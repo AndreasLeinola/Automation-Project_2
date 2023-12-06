@@ -24,3 +24,4 @@ npx cypress run --browser=chrome
 [![N|BuildStatus](https://iili.io/QOkZWQ.png)](https://freeimage.host/i/QOkZWQ)
 
 "# Automation-Project_2" 
+"# Automation-Project_2" 
