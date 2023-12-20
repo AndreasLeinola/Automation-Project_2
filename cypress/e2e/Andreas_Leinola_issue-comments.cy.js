@@ -14,6 +14,7 @@ describe('Issue comments creating, editing and deleting', () => {
 
      
     it('Should add a comment then eddit that and finaly delete that successfully ', () => {
+       //Shoould add a comment
         getIssueDetailsModal().within(() => {
             cy.contains('Add a comment...')
                 .click();
@@ -27,10 +28,12 @@ describe('Issue comments creating, editing and deleting', () => {
             cy.contains('Add a comment...').should('exist');
             cy.get('[data-testid="issue-comment"]').should('contain', newComment);
         });
-
+        
+        //Added comment should be visible
         cy.get('[data-testid="issue-comment"]').contains(newComment).should('be.visible')
         cy.get('[data-testid="issue-comment"]').should('have.length',2)
 
+        //Should edit a comment
         getIssueDetailsModal().within(() => {
             cy.get('[data-testid="issue-comment"]')
                 .first()
@@ -52,8 +55,10 @@ describe('Issue comments creating, editing and deleting', () => {
                 .and('contain', editedComment)
         });
 
+        //Comment should be edited and visible
         cy.get('[data-testid="issue-comment"]').contains(editedComment).should('be.visible')
 
+        //Should delete a comment
         getIssueDetailsModal()
           .find('[data-testid="issue-comment"]')
           .contains('Delete')
@@ -68,6 +73,7 @@ describe('Issue comments creating, editing and deleting', () => {
           .contains(editedComment)
           .should('not.exist')
 
+        //Comment should be deleted
      cy.get('[data-testid="issue-comment"]').should('have.length',1)
 
     })
