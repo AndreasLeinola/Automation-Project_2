@@ -1,4 +1,4 @@
-import IssueTimeTracking from "../pages/IssueTimeTracking";
+import IssueTimeTracking from "../../pages/IssueTimeTracking";
 
 
 describe('Add, edit, remove time estimation', () => {

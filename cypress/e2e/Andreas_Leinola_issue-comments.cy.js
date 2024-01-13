@@ -121,7 +121,7 @@ describe('Issue comments creating, editing and deleting', () => {
             cy.get('textarea[placeholder="Add a comment..."]')
                 .should('contain', previousComment)
                 .clear()
-                .type(edditedComment);
+                .type(editedComment);
 
             cy.contains('button', 'Save')
                 .click()
