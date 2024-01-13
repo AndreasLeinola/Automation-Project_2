@@ -122,7 +122,7 @@ describe('Issue create', () => {
       cy.get('[data-testid="select:userIds"]').click();
       cy.get('[data-testid="select-option:Baby Yoda"]').click();
 
-      //Select highest priority from priority dropdown
+      //Select lowest priority from priority dropdown
       cy.get('[data-testid="select:priority"]').click();
       cy.get(' [data-testid="select-option:Low"] ').trigger('click')
 

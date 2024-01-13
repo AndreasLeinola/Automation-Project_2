@@ -7,7 +7,7 @@ describe('Delete issue', () => {
       });
     });
   
-    it('Should delete issue successfully', () => {
+    it.only('Should delete issue successfully', () => {
       //Open issue
       cy.get('[data-testid="list-issue"]')
       .contains('Try leaving a comment on this issue.')
@@ -24,7 +24,6 @@ describe('Delete issue', () => {
       cy.reload()
       cy.get('[data-testid="board-list:done"]').should('be.empty')
 
-      
     });
 
     it('Should cancel deletion process successfully', () => {
