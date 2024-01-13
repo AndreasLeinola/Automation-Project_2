@@ -10,7 +10,7 @@ describe('Issue comments creating, editing and deleting', () => {
     const getIssueDetailsModal = () => cy.get('[data-testid="modal:issue-details"]');
     const newComment = 'This is new comment'
     const previousComment = 'This is new comment';
-        const edditedComment = 'This comment is edited'
+        const editedComment = 'This comment is edited'
 
      
     it('Should add a comment then eddit that and finaly delete that successfully ', () => {
@@ -41,7 +41,7 @@ describe('Issue comments creating, editing and deleting', () => {
             cy.get('textarea[placeholder="Add a comment..."]')
                 .should('contain', previousComment)
                 .clear()
-                .type(edditedComment);
+                .type(editedComment);
 
             cy.contains('button', 'Save')
                 .click()
@@ -49,10 +49,10 @@ describe('Issue comments creating, editing and deleting', () => {
 
             cy.get('[data-testid="issue-comment"]')
                 .should('contain', 'Edit')
-                .and('contain', edditedComment)
+                .and('contain', editedComment)
         });
 
-        cy.get('[data-testid="issue-comment"]').contains(edditedComment).should('be.visible')
+        cy.get('[data-testid="issue-comment"]').contains(editedComment).should('be.visible')
 
         getIssueDetailsModal()
           .find('[data-testid="issue-comment"]')
@@ -65,7 +65,7 @@ describe('Issue comments creating, editing and deleting', () => {
           .should('not.exist');
 
         getIssueDetailsModal()
-          .contains(edditedComment)
+          .contains(editedComment)
           .should('not.exist')
 
      cy.get('[data-testid="issue-comment"]').should('have.length',1)
