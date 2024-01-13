@@ -109,7 +109,7 @@ describe('AUTOMATION TEST FOR TIME TRACKING FUNCTIONALITY', () => {
     });
 
 
-
+})
 describe('AUTOMATION TEST FOR TIME TRACKING FUNCTIONALITY', () => {
     beforeEach(() => {
         cy.visit('/');
